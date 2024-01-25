@@ -8,6 +8,7 @@ export interface Country {
 	altSpellings: string[];
 	idd: string;
 	
+	//other informations
 	capital?:     string[];
 	languages?:   { [key: string]: string };
 	population:   number;

@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import type { Country } from '@/types/country'
+import { ref, defineProps, defineEmits } from 'vue';
+
+const props = defineProps<{ country: Country }>();
+const emits = defineEmits(['closeModal']);
+const country = ref(props.country);
+
+const closeModal = () => {
+    emits('closeModal');
+};
+</script>
+
 <template>
     <div class="fixed top-0 right-0 left-0 h-screen flex justify-center items-center z-50">
         <div class="relative flex bg-gray-200 p-10 rounded-md shadow-lg">
@@ -27,18 +40,5 @@
         </div>
     </div>
 </template>
-  
-<script setup lang="ts">
-import type { Country } from '@/types/country'
-import { ref, defineProps, defineEmits } from 'vue';
 
-const props = defineProps<{ country: Country }>();
-const emits = defineEmits(['closeModal']);
-
-const country = ref(props.country);
-
-const closeModal = () => {
-    emits('closeModal');
-};
-</script>
   
